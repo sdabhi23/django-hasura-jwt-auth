@@ -1,0 +1,15 @@
+registration:
+POST
+/auth/users {email, username, password} -> {"email", "id", "username"}
+
+login:
+POST
+/auth/jwt/create {username, password} -> {access, refresh}
+
+refresh jwt token:
+POST
+/auth/jwt/refresh {refresh} -> {access}
+
+user details:
+GET ["Authorization": "JWT token"]
+/users/me -> {"email", "id", "username"}
