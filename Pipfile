@@ -12,6 +12,7 @@ django-cors-headers = "*"
 djangorestframework = "==3.10.3"
 djangorestframework-simplejwt = "*"
 Django = "==2.2.13"
+django-rest-swagger = "*"
 
 [requires]
 python_version = "3.7"
