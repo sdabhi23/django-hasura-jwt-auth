@@ -1,6 +1,6 @@
-django
+django==2.2.9
 djoser
 requests
 django-cors-headers
-djangorestframework
+djangorestframework==3.10.3
 djangorestframework-simplejwt
