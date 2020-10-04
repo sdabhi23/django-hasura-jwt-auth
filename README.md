@@ -4,8 +4,11 @@ A simple containerized JWT based auth server written using Django, Djoser and Dj
 
 ## Required environment variables
 
-* HASURA_GRAPHQL_ADMIN_SECRET: The admin secret for your Hasura instance
-* GRAPHQL_URI: The graphql endpoint of your Hasura instance
+* **HASURA_GRAPHQL_ADMIN_SECRET**: The admin secret for your Hasura instance
+* **GRAPHQL_URI**: The graphql endpoint of your Hasura instance
+* **DJANGO_SUPERUSER_EMAIL**: Email addredd for the superuser account
+* **DJANGO_SUPERUSER_USERNAME**: Username for the superuser account
+* **DJANGO_SUPERUSER_PASSWORD**: Password for the superuser account
 
 ## Deployment instructions
 
