@@ -1,5 +1,5 @@
 """
-WSGI config for tripmgmt project.
+WSGI config for django-hasura-auth project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tripmgmt.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django-hasura-auth.settings')
 
 application = get_wsgi_application()
