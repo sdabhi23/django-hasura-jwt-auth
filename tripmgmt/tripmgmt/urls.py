@@ -16,13 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path, include
-from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='Django JWT Auth API')
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title='Django JWT Auth API',
+      default_version='v1',
+      description='A simple containerized JWT based auth server written using Django, Djoser and Django Rest Framework',
+      contact=openapi.Contact(email='shrey.dabhi23@gmail.com'),
+      license=openapi.License(name="MIT License"),
+   ),
+   public=True,
+   permission_classes=(permissions.DjangoModelPermissions,),
+)
 
 urlpatterns = [
-    url(r'^$', schema_view),
+    url(r'^$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt'))
+    path('auth/', include('djoser.urls.jwt')),
+    url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json')
 ]
