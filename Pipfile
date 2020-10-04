@@ -6,13 +6,13 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-djoser = "*"
-requests = "*"
-django-cors-headers = "*"
+djoser = "==2.0.5"
+requests = "==2.24.0"
+django-cors-headers = "==3.5.0"
 djangorestframework = "==3.10.3"
-djangorestframework-simplejwt = "*"
+djangorestframework-simplejwt = "==4.4.0"
 Django = "==2.2.13"
-django-rest-swagger = "*"
+django-rest-swagger = "==2.2.0"
 
 [requires]
 python_version = "3.7"
