@@ -11,6 +11,19 @@ A simple containerized JWT based auth server for integration with Hasura GrphQL 
 * **DJANGO_SUPERUSER_USERNAME:** Username for the superuser account
 * **DJANGO_SUPERUSER_PASSWORD:** Password for the superuser account
 
+## Configuration for HGE
+
+* HASURA_GRAPHQL_JWT_SECRET
+
+    ```json
+    {
+        "type": "HS256",
+        <!-- should be same as the SECRET_KEY set above -->
+        "key": "3EK6FD+o0+c7tzBNVfjpMkNDi2yARAAKzQlk8O2IKoxQu4nF7EdAh8s3TwpHwrdWT6R",
+        "claims_namespace_path": "$.hasura"
+    }
+    ```
+
 ## Important routes
 
 ### Register new user
