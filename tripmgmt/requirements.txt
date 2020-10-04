@@ -1,0 +1,7 @@
+djoser==2.0.5
+requests==2.24.0
+django-cors-headers==3.5.0
+djangorestframework==3.10.3
+djangorestframework-simplejwt==4.4.0
+Django==2.2.13
+django-rest-swagger==2.2.0
