@@ -73,7 +73,7 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework_simplejwt',
     'corsheaders',
-    'rest_framework_swagger'
+    'drf_yasg'
 ]
 
 REST_FRAMEWORK = {
@@ -85,6 +85,10 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer', 'JWT'),
+}
+
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'http://localhost:8000/admin/'
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
