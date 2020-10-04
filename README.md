@@ -1,18 +1,22 @@
 # Django JWT Auth Server
 
-A simple containerized JWT based auth server written using Django, Djoser and Django Rest Framework
+A simple containerized JWT based auth server for integration with Hasura GrphQL Engine written in Python using Django, Djoser and Django Rest Framework
 
 ## Required environment variables
 
-* **HASURA_GRAPHQL_ADMIN_SECRET**: The admin secret for your Hasura instance
-* **GRAPHQL_URI**: The graphql endpoint of your Hasura instance
-* **DJANGO_SUPERUSER_EMAIL**: Email addredd for the superuser account
-* **DJANGO_SUPERUSER_USERNAME**: Username for the superuser account
-* **DJANGO_SUPERUSER_PASSWORD**: Password for the superuser account
+* **HASURA_GRAPHQL_ADMIN_SECRET:** The admin secret for your Hasura instance
+* **GRAPHQL_URI:** The graphql endpoint of your Hasura instance
+* **DJANGO_SUPERUSER_EMAIL:** Email addredd for the superuser account
+* **DJANGO_SUPERUSER_USERNAME:** Username for the superuser account
+* **DJANGO_SUPERUSER_PASSWORD:** Password for the superuser account
 
 ## Deployment instructions
 
-Run container by pulling image from Docker Hub
+* Run container by pulling image from Docker Hub:
+
+    ```bash
+    ➜ docker run -p 8000:8000 --env-file dev.env django-hasura-auth
+    ```
 
 ## Dev environment setup
 
