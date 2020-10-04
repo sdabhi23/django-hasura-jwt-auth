@@ -4,9 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
 
 [packages]
-djoser = "==2.0.5"
 requests = "==2.24.0"
 django-cors-headers = "==3.5.0"
 djangorestframework = "==3.11.2"
