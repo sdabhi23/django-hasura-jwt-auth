@@ -3,11 +3,12 @@ from django.dispatch import receiver
 from django.db.models import signals
 from django.contrib.auth.models import User
 import requests
+import os
 
 
 @receiver(signals.post_save, sender=User)
 def auth_signal(sender, **kwargs):
-    if User.objects.count() > 0:
+    if User.objects.count() > 1:
         user = kwargs['instance']
         print(user.id)
         print(user.username)
