@@ -88,7 +88,7 @@ SIMPLE_JWT = {
 }
 
 SWAGGER_SETTINGS = {
-    'LOGIN_URL': 'http://localhost:8000/admin/'
+    'LOGIN_URL': '/admin/'
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
