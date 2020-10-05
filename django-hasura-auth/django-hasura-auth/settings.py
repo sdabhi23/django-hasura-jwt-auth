@@ -13,39 +13,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from datetime import timedelta
 
-# signals start
-from django.db import models
-from django.dispatch import receiver
-from djoser.signals import user_registered
-import requests
-
-
-@receiver(user_registered)
-def auth_signal(sender, user, request, **kwargs):
-    headers = {
-        "content-type": "application/json",
-        "x-hasura-admin-secret": os.environ['HASURA_GRAPHQL_ADMIN_SECRET']
-    }
-    mutation = """mutation CreateUser($userId: Int!, $userName: String!) {
-        insert_user(objects: {id: $userId, username: $userName}) {
-            affected_rows
-        }
-    }
-    """
-    variables = {
-        'userId': user.id,
-        'userName': user.username
-    }
-    # TODO: make the url dynamic
-    r = requests.post(os.environ['GRAPHQL_URI'], json={
-                      'query': mutation, 'variables': variables, 'operationName': 'CreateUser'}, headers=headers)
-    print(user.username)
-    print(user.id)
-    print(r.json())
-    print("User registered!")
-# signals end
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -74,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'drf_yasg'
+    'drf_yasg',
+    'django-hasura-auth.apps.AuthConfig'
 ]
 
 REST_FRAMEWORK = {
