@@ -2,6 +2,8 @@
 
 A simple containerized JWT based auth server for integration with Hasura GrphQL Engine written in Python using Django and Django Rest Framework
 
+> **All the secrets / keys provided in the sample deployment files are for development purpose only. Please replace them before deployment**
+
 ## Required environment variables
 
 * **SECRET_KEY:** The signing key for all types of tokens
